@@ -28,3 +28,4 @@ import "./pb_message.js";
 import "./pb_timestamp.js";
 import "./pb_online_status.js";
 import "./pb_toggle.js";
+import "./pb_timeline_vertical.js";

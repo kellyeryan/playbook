@@ -30,3 +30,4 @@ kits:
   - timestamp
   - online_status
   - toggle
+  - timeline_vertical

@@ -98,3 +98,6 @@ WebpackerReact.setup (OnlineStatus);
 
 import * as Toggle from "pb_toggle/docs";
 WebpackerReact.setup (Toggle);
+
+import * as TimelineVertical from "pb_timeline_vertical/docs";
+WebpackerReact.setup (TimelineVertical);
