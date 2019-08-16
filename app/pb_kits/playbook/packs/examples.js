@@ -95,3 +95,6 @@ WebpackerReact.setup (Timestamp);
 
 import * as OnlineStatus from "pb_online_status/docs";
 WebpackerReact.setup (OnlineStatus);
+
+import * as Toggle from "pb_toggle/docs";
+WebpackerReact.setup (Toggle);
