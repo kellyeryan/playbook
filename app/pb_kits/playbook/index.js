@@ -84,6 +84,7 @@ export dashboardValueSettings from './pb_dashboard_value/dashboardValueSettings'
 
 // Other JS/Plugins
 export pbChart from './plugins/pb_chart.js'
-export PbTypeahead from './pb_typeahead'
 export PbPopover from './pb_popover'
 export PbTable from './pb_table'
+export PbTooltip from './pb_tooltip'
+export PbTypeahead from './pb_typeahead'
