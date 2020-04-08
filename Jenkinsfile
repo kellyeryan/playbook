@@ -8,11 +8,6 @@ library identifier: 'ci-kubed@v4.0.0', retriever: modernSCM([
 
 def cluster = "APP-HQ"
 app.build(
-<<<<<<< HEAD
-=======
-  cluster: cluster, 
-  deployerVersion: "master-e4c01702624ac34f2663f894fbdb68a369b09629-588",
->>>>>>> 7ca3fa2... Raise rubocop version (#699)
   resources: [
     requestCpu: '1',
     limitCpu: '2',
@@ -21,10 +16,7 @@ app.build(
   ]
 ) {
   def scmVars
-<<<<<<< HEAD
   def appImage
-=======
->>>>>>> 7ca3fa2... Raise rubocop version (#699)
 
   stage('Code Checkout') {
     scmVars = checkout scm
@@ -46,22 +38,4 @@ app.build(
   app.dockerStage('Test') {
     sh "docker run --tty --rm ${appImage} bin/test"
   }
-<<<<<<< HEAD
-=======
-
-  // This cluster MUST be the same as the cluster passed to `app.build` or weird shit
-  // will happen. Deploy using Milano instead.
-  app.deployerStage('Deploy', cluster) {
-    withCredentials([usernamePassword(
-      credentialsId: 'jenkins-app-deploy-aws-access-key',
-      usernameVariable: 'AWS_ACCESS_KEY_ID',
-      passwordVariable: 'AWS_SECRET_ACCESS_KEY'
-    )]) {
-      if (env.BRANCH_NAME == 'master') {
-        sh "bin/deploy staging ${scmVars.GIT_COMMIT} ${tag} ${cluster}"
-        sh "bin/deploy production ${scmVars.GIT_COMMIT} ${tag} ${cluster}"
-      }
-    }
-  }
->>>>>>> 7ca3fa2... Raise rubocop version (#699)
 }

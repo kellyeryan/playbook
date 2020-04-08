@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add onClick prop to kits in need ([#694](https://github.com/powerhome/playbook/pull/694) @thestephenmarshall)
 - Add Renovate bot ([#492](https://github.com/powerhome/playbook/pull/492) @viniciusgama)
 
-<<<<<<< HEAD
 
 ## [4.14.0] 2020-5-14
 - Upgrade react-popper lib to latest ([#778](https://github.com/powerhome/playbook/pull/778) @thestephenmarshall)
@@ -51,9 +50,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New Kit - Weekday Stacked ([#705](https://github.com/powerhome/playbook/pull/705) @thestephenmarshall)
 - Remove `method_source` `0.9.2` dependency ([#723](https://github.com/powerhome/playbook/pull/723) @wadewinningham)
 - Deploy staging/production via Milano rather than Jenkins ([#731](https://github.com/powerhome/playbook/pull/731) @benlangfeld)
-=======
-- Raise Rubocop version from 0.72.0 to 0.81.0 ([#699](https://github.com/powerhome/playbook/pull/699) @garettarrowood)
->>>>>>> 7ca3fa2... Raise rubocop version (#699)
 
 ## [4.10.0] 2020-4-2
 - Added react and dark version for Label Value Kit ([#688](https://github.com/powerhome/playbook/pull/688) @christinaatai)

@@ -25,12 +25,17 @@ module Playbook
       end
     end
 
+<<<<<<< HEAD
     def kit_path(kit)
       "#{Playbook::Engine.root}/app/pb_kits/playbook/pb_#{kit}"
     end
 
     def get_kit_description(kit)
       filename = "#{Playbook::Engine.root}/app/pb_kits/playbook/pb_#{kit}/docs/_description.md"
+=======
+    def get_kit_description(_kit)
+      filename = "#{Playbook::Engine.root}/app/pb_kits/playbook/pb_#{@kit}/docs/_description.md"
+>>>>>>> a65f867... Bugfix/various (#696)
       read_file(filename)
     end
 
