@@ -23,10 +23,13 @@ export default class DateTime {
 
   convertToTimezone() {
     return this.value.strftime('%Z')
+<<<<<<< HEAD
   }
 
   toCustomFormat(format = '%-m/%-d') {
     return this.value.strftime(format)
+=======
+>>>>>>> 379ec43... Time Range Inline kit (#680)
   }
 
   toYear() {
