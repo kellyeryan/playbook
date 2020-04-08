@@ -83,3 +83,4 @@ kits:
     - weekday_stacked
   - user
   - user_badge
+  - selectable_card_icon
