@@ -5,8 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
 ## Unreleased
 - Tooltip Kit ([#750](https://github.com/powerhome/playbook/pull/750) @thestephenmarshall)
+
+## [4.13.1] 2020-4-28
 
 ### Fixed
 - Added weekday_stacked scss import back in playbook.scss
@@ -56,8 +59,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added Project kit ([#667](https://github.com/powerhome/playbook/pull/667) @KatherineMuedas)
-
-- Prevent empty pattern attribute on Text Input kit ([#681](https://github.com/powerhome/playbook/pull/681) @thestephenmarshall)
 
 ## [4.8.0] 2020-3-19
 

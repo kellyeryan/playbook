@@ -8,7 +8,6 @@ services:
       context: .
       args:
         precompileassets: "disable"
-        node_env: "development"
     volumes:
       - .:/home/app/src
       - bundle:/usr/local/bundle

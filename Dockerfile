@@ -1,12 +1,10 @@
 FROM phusion/passenger-customizable:0.9.27
 ARG precompileassets
-ARG node_env
 
 RUN bash -lc 'rvm remove all --force && rvm install ruby-2.5.0 && rvm --default use ruby-2.5.0 && gem install bundler -v 1.16.1'
 RUN /pd_build/ruby_support/install_ruby_utils.sh
 RUN /pd_build/ruby_support/finalize.sh
 
-ENV NODE_ENV=node_env
 ENV NODE_OPTIONS "--max_old_space_size=4096"
 ENV NVM_VERSION v0.33.8
 ENV NODE_VERSION v10.17.0
