@@ -3,11 +3,10 @@
   data: object.data,
   class: object.classname) do %>
 
-
+  <% if object.orientation === "horizontal"%>
     <div class="line_wrapper">
       <div class="line"></div>
     </div>
-
     <span class="step_wrapper">
       <span class="circle">
         <%= pb_rails("icon", props: { icon: "check", fixed_width: true, size: "xs" }) %>
@@ -16,5 +15,17 @@
         <%= capture(&object.children) %>
       </span>
     </span>
+  <% else %>
+    <div class="circle_and_line">
+        <div class="circle">
+            <%= pb_rails("icon", props: { icon: "check", fixed_width: true, size: "xs" }) %>
+        </div>
+        <div class="line">
+        </div>
+    </div>
+    <div class="step_child">
+        <%= capture(&object.children) %>
+    </div>
+  <% end %>
 
 <% end %>

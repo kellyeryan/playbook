@@ -7,13 +7,11 @@ module Playbook
 
       partial "pb_progress_stepper/progress_stepper"
 
-
       prop :orientation, type: Playbook::Props::Enum,
                          values: %w[vertical horizontal],
                          default: "horizontal"
       prop :icon, type: Playbook::Props::Boolean,
                   default: false
-
 
       def classname
         generate_classname("pb_progress_stepper_kit", orientation, icon_class)
