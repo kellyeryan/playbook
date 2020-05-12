@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+- New kit added: Tooltip ([#750](https://github.com/powerhome/playbook/pull/750) @evalouderback & @thestephenmarshall)
+
 ## [4.13.1] 2020-4-28
 
 ### Fixed
@@ -58,8 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added Project kit ([#667](https://github.com/powerhome/playbook/pull/667) @KatherineMuedas)
-
-- Prevent empty pattern attribute on Text Input kit ([#681](https://github.com/powerhome/playbook/pull/681) @thestephenmarshall)
 
 ## [4.8.0] 2020-3-19
 
