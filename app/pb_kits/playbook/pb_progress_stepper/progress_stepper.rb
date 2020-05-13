@@ -14,7 +14,7 @@ module Playbook
                   default: false
 
       def classname
-        generate_classname("pb_progress_stepper_kit", orientation, icon_class)
+        generate_classname("pb_progress_step_kit", orientation, icon_class)
       end
 
     private

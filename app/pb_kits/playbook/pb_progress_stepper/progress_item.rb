@@ -10,12 +10,9 @@ module Playbook
         prop :status, type: Playbook::Props::Enum,
             values: %w[complete active inactive],
             default: "inactive"
-        prop :orientation, type: Playbook::Props::Enum,
-            values: %w[vertical horizontal],
-            default: "horizontal"
   
         def classname
-          generate_classname("pb_progress_stepper_item_kit", orientation, status)
+          generate_classname("pb_progress_step_item_kit", status)
         end
       end
     end
