@@ -1,12 +1,12 @@
 /* @flow */
 
-import React from "react";
-import DateTime from "../pb_kit/dateTime.js";
-import classnames from "classnames";
+import React from 'react'
+import DateTime from '../pb_kit/dateTime.js'
+import classnames from 'classnames'
 
-import { buildAriaProps, buildCss, buildDataProps } from "../utilities/props";
+import { buildAriaProps, buildCss, buildDataProps } from '../utilities/props'
 
-import { Body, Icon, Title } from "../";
+import { Body, Icon, Title } from '../'
 
 type TimeProps = {
   aria?: object,
@@ -23,30 +23,30 @@ const Time = ({
   className,
   data = {},
   id,
-  size = "sm",
-  timezone = "America/NewYork",
+  size = 'sm',
+  timezone = 'America/NewYork',
   value,
 }: TimeProps) => {
-  const ariaProps = buildAriaProps(aria);
-  const dataProps = buildDataProps(data);
+  const ariaProps = buildAriaProps(aria)
+  const dataProps = buildDataProps(data)
 
-  const css = classnames(className, buildCss("pb_time_kit", size));
+  const css = classnames(className, buildCss('pb_time_kit', size))
 
-  const time = new DateTime({ value: value });
+  const time = new DateTime({ value: value })
 
   const formatTimeString = (value: DateTime) => {
-    const hour = value.toHour();
-    const minutes = value.toMinute();
-    const meridian = value.toMeridian();
+    const hour = value.toHour()
+    const minutes = value.toMinute()
+    const meridian = value.toMeridian()
 
-    return `${hour}:${minutes}${meridian}`;
-  };
+    return `${hour}:${minutes}${meridian}`
+  }
 
   const formatTimezoneString = (timezone: DateTime) => {
-    const zone = timezone.toTimezone().toString().toUpperCase();
+    const zone = timezone.toTimezone().toString().toUpperCase()
 
-    return `${zone}`;
-  };
+    return `${zone}`
+  }
 
   type TimeSubComponent = {
     value: DateTime,
@@ -54,7 +54,11 @@ const Time = ({
 
   const TimeSizeLarge = ({ value }: TimeSubComponent) => (
     <>
-      <Title size={3} tag="span" text={formatTimeString(value)}>
+      <Title
+          size={3}
+          tag="span"
+          text={formatTimeString(value)}
+      >
         <span>
           <span className="pb_time_timezone">
             {formatTimezoneString(value)}
@@ -62,12 +66,18 @@ const Time = ({
         </span>
       </Title>
     </>
-  );
+  )
 
   const TimeSizeSmall = ({ value }: TimeSubComponent) => (
     <>
-      <Body tag="span" text={formatTimeString(value)}>
-        <Icon fixedWidth icon="clock">
+      <Body
+          tag="span"
+          text={formatTimeString(value)}
+      >
+        <Icon
+            fixedWidth
+            icon="clock"
+        >
           <time dateTime={value.toIso()}>
             <span>
               {formatTimeString(value)}
@@ -79,11 +89,14 @@ const Time = ({
         </Icon>
       </Body>
     </>
-  );
+  )
 
   const TimeSizeOther = ({ value }: TimeSubComponent) => (
     <>
-      <Body tag="span" text={formatTimeString(value)}>
+      <Body
+          tag="span"
+          text={formatTimeString(value)}
+      >
         <time dateTime={value.toIso}>
           <span>
             {formatTimeString(value)}
@@ -94,21 +107,26 @@ const Time = ({
         </time>
       </Body>
     </>
-  );
+  )
 
   return (
     <>
-      <div {...ariaProps} {...dataProps} className={css} id={id}>
-        <If condition={size === "lg"}>
+      <div
+          {...ariaProps}
+          {...dataProps}
+          className={css}
+          id={id}
+      >
+        <If condition={size === 'lg'}>
           <TimeSizeLarge value={time} />
         </If>
-        <If condition={size === "sm"}>
+        <If condition={size === 'sm'}>
           <TimeSizeSmall value={time} />
           <Else />
           <TimeSizeOther value={time} />
         </If>
       </div>
     </>
-  );
-};
-export default Time;
+  )
+}
+export default Time
