@@ -42,10 +42,10 @@ const Time = ({
     return `${hour}:${minutes}${meridian}`;
   };
 
-  const formatTimezoneString = (value: DateTime) => {
-    const timezone = value.toTimezone().toString().toUpperCase();
+  const formatTimezoneString = (timezone: DateTime) => {
+    const zone = timezone.toTimezone().toString().toUpperCase();
 
-    return `${timezone}`;
+    return `${zone}`;
   };
 
   type TimeSubComponent = {
@@ -64,22 +64,22 @@ const Time = ({
     </>
   );
 
-  // const TimeSizeSmall = ({ value }: TimeSubComponent) => (
-  //   <>
-  //     <Body tag="span" text={formatTimeString(value)}>
-  //       <Icon fixedWidth icon="clock">
-  //         <time dateTime={value.toIso()}>
-  //           <span>
-  //             {formatTimeString(value)}
-  //             <span className="pb_time_timezone">
-  //               {formatTimezoneString(value)}
-  //             </span>
-  //           </span>
-  //         </time>
-  //       </Icon>
-  //     </Body>
-  //   </>
-  // );
+  const TimeSizeSmall = ({ value }: TimeSubComponent) => (
+    <>
+      <Body tag="span" text={formatTimeString(value)}>
+        <Icon fixedWidth icon="clock">
+          <time dateTime={value.toIso()}>
+            <span>
+              {formatTimeString(value)}
+              <span className="pb_time_timezone">
+                {formatTimezoneString(value)}
+              </span>
+            </span>
+          </time>
+        </Icon>
+      </Body>
+    </>
+  );
 
   const TimeSizeOther = ({ value }: TimeSubComponent) => (
     <>
@@ -101,6 +101,9 @@ const Time = ({
       <div {...ariaProps} {...dataProps} className={css} id={id}>
         <If condition={size === "lg"}>
           <TimeSizeLarge value={time} />
+        </If>
+        <If condition={size === "sm"}>
+          <TimeSizeSmall value={time} />
           <Else />
           <TimeSizeOther value={time} />
         </If>
