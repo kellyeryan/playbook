@@ -4,7 +4,6 @@ import { Message } from '../../'
 const MessageDefault = () => {
   return (
     <div>
-
       <Message
           avatarName="Mike Bishop"
           avatarStatus="online"

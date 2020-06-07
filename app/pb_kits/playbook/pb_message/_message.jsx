@@ -1,35 +1,53 @@
 /* @flow */
 
 import React from 'react'
-import { Avatar, Body, Caption } from '../'
 import classnames from 'classnames'
-import { spacing } from '../utilities/spacing.js'
+
+import { Avatar, Body, Caption } from '../'
+
+import {
+  buildAriaProps,
+  buildCss,
+  buildDataProps,
+} from '../utilities/props'
 
 type MessageProps = {
+  aria?: object,
   avatarName?: String,
   avatarStatus?: String,
   avatarUrl?: String,
+  className?: String,
+  data?: object,
+  id?: id,
   label?: String,
-  message: String,
+  message?: String,
   timestamp?: String,
 }
 
-const Message = (props: MessageProps) => {
-  const {
-    avatarName = '',
-    avatarUrl = '',
-    label = '',
-    message = '',
-    timestamp = '',
-    avatarStatus = null,
-  } = props
+const Message = ({
+  aria = {},
+  avatarName,
+  avatarStatus = null,
+  avatarUrl,
+  className,
+  data = {},
+  id,
+  label,
+  message,
+  timestamp,
+}: MessageProps) => {
+  const ariaProps = buildAriaProps(aria)
+  const dataProps = buildDataProps(data)
   const shouldDisplayAvatar = avatarUrl || avatarName
-  const classes = shouldDisplayAvatar
-    ? 'pb_message_kit_avatar'
-    : 'pb_message_kit'
+  const classes = classnames(className, buildCss('pb_message_kit', { 'avatar': avatarName }))
 
   return (
-    <div className={classnames(classes, spacing(props))}>
+    <div
+        {...ariaProps}
+        {...dataProps}
+        className={classes}
+        id={id}
+    >
       <If condition={shouldDisplayAvatar}>
         <Avatar
             imageUrl={avatarUrl}
